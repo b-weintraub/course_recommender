@@ -33,31 +33,6 @@ class RMP_Scraper:
                               'remaining'] + 20  # get the number of professors at school
             return num_of_prof
 
-        def SearchProfessor(self, ProfessorName):
-            self.indexnumber = self.GetProfessorIndex(ProfessorName)
-            self.PrintProfessorInfo()
-            return self.indexnumber
-
-        def GetProfessorIndex(self,ProfessorName):  # function searches for professor in list
-            for i in range(0, len(self.professorlist)):
-                if (ProfessorName == (self.professorlist[i]['tFname'] + " " + self.professorlist[i]['tLname'])):
-                    return i
-            return False  # Return False is not found
-
-        def PrintProfessorInfo(self):  # print search professor's name and RMP score
-            if self.indexnumber == False:
-                print("error")
-            else:
-                print(self.professorlist[self.indexnumber])
-
-        def PrintProfessorDetail(self,key):  # print search professor's name and RMP score
-            if self.indexnumber == False:
-                print("error")
-                return "error"
-            else:
-                print(self.professorlist[self.indexnumber][key])
-                return self.professorlist[self.indexnumber][key]
-
 
 def main():
     
