@@ -1,9 +1,10 @@
 import pandas as pd
 
 def cleaner(df):
-    df['name'] = df['tFname'] + ' ' + df['tLname']
+    df['professor_name'] = df['tFname'] + ' ' + df['tLname']
     df.drop(['tFname','tMiddlename','tLname','Unnamed: 0','contentType','categoryType'], axis=1, inplace=True)
     df.dropna(inplace=True)
+    df.rename(columns={"tDept": "Department"}, inplace=True)
     return df
 
 
